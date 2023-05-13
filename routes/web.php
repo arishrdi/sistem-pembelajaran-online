@@ -16,13 +16,13 @@ Route::get('/lupa-password', function () {
 
 Auth::routes();
 
-if (Auth::check()) {
-    Route::get('/', [HomeController::class, 'index'])->name('home');
-} else {
-    Route::get('/', function () {
-        return view('welcome');
-    });
-}
+Route::get('/', function () {
+    return view('welcome');
+});
+// if (Auth::check()) {
+// } else {
+// }
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::middleware('role:guru')->get('/guru', [HomeController::class, 'guru'])->name('guru');
 
