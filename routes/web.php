@@ -16,7 +16,7 @@ Route::get('/lupa-password', function () {
 
 Auth::routes();
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 // if (Auth::check()) {
